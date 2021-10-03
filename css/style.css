@@ -405,9 +405,6 @@ input[type=radio]:checked:before {
     .bg-fixed {
         background-attachment: scroll;
     }
-    .bg-img {
-        background-size: auto;
-    }
   }
 .bg-cover {
     background-size: cover !important;
