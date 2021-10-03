@@ -399,6 +399,11 @@ input[type=radio]:checked:before {
 .bg-fixed {
     background-attachment: fixed;
 }
+@media screen and (max-width: 650px) {
+    #bg-fixed {
+        background-attachment: scroll;
+    }
+}
 .bg-cover {
     background-size: cover !important;
 }
