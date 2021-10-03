@@ -404,6 +404,11 @@ input[type=radio]:checked:before {
         background-attachment: scroll;
     }
 }
+@media screen and (max-width: 650px) {
+    .bg-img {
+        background-size: auto;
+    }
+}
 .bg-cover {
     background-size: cover !important;
 }
