@@ -726,7 +726,7 @@ input[type=radio]:checked:before {
     position: relative;
     display: -moz-inline-stack;
     display: inline-block;
-    zoom: 1;
+    transform: scale(1);
     width: 19px;
     height: 1px;
     color: #fff;
