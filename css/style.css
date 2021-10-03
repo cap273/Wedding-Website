@@ -399,16 +399,16 @@ input[type=radio]:checked:before {
 .bg-fixed {
     background-attachment: fixed;
 }
-@media screen and (max-width: 650px) {
+
+@supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */ 
     .bg-fixed {
         background-attachment: scroll;
     }
-}
-@media screen and (max-width: 650px) {
     .bg-img {
         background-size: auto;
     }
-}
+  }
 .bg-cover {
     background-size: cover !important;
 }
