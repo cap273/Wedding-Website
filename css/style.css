@@ -400,7 +400,7 @@ input[type=radio]:checked:before {
     background-attachment: fixed;
 }
 @media screen and (max-width: 650px) {
-    #bg-fixed {
+    .bg-fixed {
         background-attachment: scroll;
     }
 }
