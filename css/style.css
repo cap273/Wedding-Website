@@ -863,19 +863,21 @@ body.offcanvas .oliven-nav-toggle {
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 5px;
-    margin-bottom: 0;
-    color: #fff;
+    margin-bottom: 150px;
+    color: #000000;
     text-transform: uppercase;
+    background: rgba(221,192,149,0.5);
 }
 .header .caption h1 {
     font-family: 'Alex Brush', cursive;
-    font-weight: 400;
+    font-weight: 500;
     margin: 0 0 15px 0;
     font-size: 120px;
-    color: #FFF;
+    color: #000000;
     display: block;
     line-height: 1em;
     position: relative;
+    background: rgba(221,192,149,0.5);
 }
 .header .caption p {
     color: #fff;
@@ -1301,7 +1303,7 @@ body.offcanvas .oliven-nav-toggle {
       color: #FFF; 
 }
 .organization .item-box .numb {
-    font-size: 75px;
+    font-size: 50px;
     margin-bottom: 15px;
     color: transparent;
     -webkit-text-stroke: 1px #BD945A; 
@@ -1638,6 +1640,7 @@ body.offcanvas .oliven-nav-toggle {
 .gift {
     background-color: #fff;
     padding: 30px 0;
+    margin: auto;
 }
 .gift .owl-carousel {
     margin: 30px 0;
@@ -1655,6 +1658,7 @@ body.offcanvas .oliven-nav-toggle {
     filter: grayscale(100%);
     -webkit-transition: all .5s;
     transition: all .5s;
+    margin: auto;
 }
 
 .gift img:hover {
