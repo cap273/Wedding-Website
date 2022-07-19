@@ -1,0 +1,4 @@
+# Usage: pip3 install -r requirements.txt
+
+pyjwt
+flask_jwt_extended
