@@ -1675,6 +1675,7 @@ body.offcanvas .oliven-nav-toggle {
 .buttono {
     position: relative;
     line-height: 1em;
+    align-items: center;
 }
 .buttono a {
     font-family: 'Nunito Sans', sans-serif;
