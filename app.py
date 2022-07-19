@@ -30,4 +30,6 @@ def default_es(path=None):
 if __name__ == "__main__":
 
     # Run app in debug mode
-    app.run(host="localhost", port=int(app.config["PORT"]), debug=True)
+    # app.run(host="localhost", port=int(app.config["PORT"]), debug=True)
+    
+    app.run(debug=True)
