@@ -565,18 +565,21 @@
                             <h2 class="oliven-title text-center">R.S.V.P</h2>
                             <br>
 
-                            <form autocomplete="off" class="row" action="#rsvp">
+                            <form autocomplete="off" class="row" action="#rsvp" onsubmit="submitRsvp();return false">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" name='rsvp-input-name' class="form-control" placeholder="Name"> </div>
+                                    <div class="form-group autocomplete">
+                                        <input type="text" id='rsvp-input-name' name='rsvp-input-name' class="form-control" placeholder="Name"> 
+                                    </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Email"> </div>
+                                        <input type="text" class="form-control" placeholder="Email"> 
+                                    </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" id='rsvp-num-guests' class="form-control" placeholder="Guests"> </div>
+                                        <input type="text" id='rsvp-num-guests' class="form-control" placeholder="Guests"> 
+                                    </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -624,6 +627,7 @@
                 </div>
             </div>
         </div>
+
         <!-- jQuery -->
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js') }}"></script>
@@ -635,6 +639,9 @@
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+        <!-- Autocomplete RSVP Names -->
+        <script>autocomplete(document.getElementById('rsvp-input-name'));</script>
     </div>
 </body>
 
