@@ -14,10 +14,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-        <script src="js/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
     <!-- Preloader -->
@@ -305,79 +301,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Friends -->
-            <!--
-            <div id="friends" class="friends section-padding bg-pink">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 mb-30"> 
-                            <span class="oliven-title-meta">Our best friends ever</span>
-                            <h2 class="oliven-title mb-30">Thanks for being there</h2> 
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="owl-carousel owl-theme">
-                                <div class="item">
-                                    <div class="img"> <img src="{{ url_for('static', filename='images/300x300.jpg') }}" alt=""> </div>
-                                    <div class="info valign">
-                                        <div class="full-width">
-                                            <h6>Eleanor Chris</h6><span>Bridesmaids</span>
-                                            <p>Enstibulum eringilla dui athe elitene miss minibus viverra nectar.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="img"> <img src="{{ url_for('static', filename='images/300x300.jpg') }}" alt=""> </div>
-                                    <div class="info valign">
-                                        <div class="full-width">
-                                            <h6>Stefano Smiht</h6><span>Groomsmen</span>
-                                            <p>Enstibulum eringilla dui athe elitene miss minibus viverra nectar.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="img"> <img src="{{ url_for('static', filename='images/300x300.jpg') }}" alt=""> </div>
-                                    <div class="info valign">
-                                        <div class="full-width">
-                                            <h6>Vanessa Brown</h6><span>Bridesmaids</span>
-                                            <p>Enstibulum eringilla dui athe elitene miss minibus viverra nectar.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="img"> <img src="{{ url_for('static', filename='images/300x300.jpg') }}" alt=""> </div>
-                                    <div class="info valign">
-                                        <div class="full-width">
-                                            <h6>Matthew Brown</h6><span>Groomsmen</span>
-                                            <p>Enstibulum eringilla dui athe elitene miss minibus viverra nectar.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="img"> <img src="{{ url_for('static', filename='images/300x300.jpg') }}" alt=""> </div>
-                                    <div class="info valign">
-                                        <div class="full-width">
-                                            <h6>Fredia Halle</h6><span>Bridesmaids</span>
-                                            <p>Enstibulum eringilla dui athe elitene miss minibus viverra nectar.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="img"> <img src="{{ url_for('static', filename='images/300x300.jpg') }}" alt=""> </div>
-                                    <div class="info valign">
-                                        <div class="full-width">
-                                            <h6>Pablo Dante</h6><span>Groomsmen</span>
-                                            <p>Enstibulum eringilla dui athe elitene miss minibus viverra nectar.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            -->
             <!-- See you -->
             <div id="seeyou" class="seeyou section-padding bg-img bg-fixed" data-background="{{ url_for('static', filename='images/ES-123.png') }}">
                 <div class="container">
@@ -416,7 +339,7 @@
                         </div>
                         <div class="col-md-3 item-box">
                             <h2 class="custom-font numb">Nov. 3</h2>
-                            <h6 class="title">Wedding Eve</h6>
+                            <h6 class="title">Wedding Eve Dinner</h6>
                             <p>On Thursday, after a day of sight-seeing around historic Cartagena at your own pace, please join us for dinner and drinks as we celebrate and toast the upcoming nuptials. Destination and details to come. Dress code: semi-formal/dressy casual.</p>
                         </div>
                         <div class="col-md-3 item-box">
@@ -432,85 +355,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Gallery -->
-            <!---
-            <div id="gallery" class="section-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 mb-30"> 
-                            <span class="oliven-title-meta">Gallery</span>
-                            <h2 class="oliven-title">Our Memories</h2> 
-                        </div>
-                    </div>
-                    <div class="row">
-                        <ul class="col list-unstyled list-inline mb-0 gallery-menu" id="gallery-filter">
-                            <li class="list-inline-item"><a class="active" data-filter="*">All</a></li>
-                            <li class="list-inline-item"><a class="" data-filter=".ceremony">Ceremony</a></li>
-                            <li class="list-inline-item"><a class="" data-filter=".party">Party</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row gallery-filter mt-3">
-                        <div class="col-md-4 gallery-item ceremony">
-                            <a href="{{ url_for('static', filename='images/626x417.jpg') }}" class="img-zoom">
-                                <div class="gallery-box">
-                                    <div class="gallery-img"> <img src="{{ url_for('static', filename='images/626x417.jpg') }}" class="img-fluid mx-auto d-block" alt=""> </div>
-                                    <div class="gallery-detail">
-                                        <h4 class="mb-0">Wedding Ceremony</h4> 
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4 gallery-item party">
-                            <a href="{{ url_for('static', filename='images/626x417.jpg') }}" class="img-zoom">
-                                <div class="gallery-box">
-                                    <div class="gallery-img"> <img src="{{ url_for('static', filename='images/626x417.jpg') }}" class="img-fluid mx-auto d-block" alt=""> </div>
-                                    <div class="gallery-detail">
-                                        <h4 class="mb-0">Wedding Party</h4> </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4 gallery-item ceremony">
-                            <a href="{{ url_for('static', filename='images/626x417.jpg') }}" class="img-zoom">
-                                <div class="gallery-box">
-                                    <div class="gallery-img"> <img src="{{ url_for('static', filename='images/626x417.jpg') }}" class="img-fluid mx-auto d-block" alt=""> </div>
-                                    <div class="gallery-detail">
-                                        <h4 class="mb-0">Wedding Ceremony</h4> </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4 gallery-item party">
-                            <a href="{{ url_for('static', filename='images/626x417.jpg') }}" class="img-zoom">
-                                <div class="gallery-box">
-                                    <div class="gallery-img"> <img src="{{ url_for('static', filename='images/626x417.jpg') }}" class="img-fluid mx-auto d-block" alt=""> </div>
-                                    <div class="gallery-detail">
-                                        <h4 class="mb-0">Wedding Party</h4> </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4 gallery-item ceremony">
-                            <a href="{{ url_for('static', filename='images/626x417.jpg') }}" class="img-zoom">
-                                <div class="gallery-box">
-                                    <div class="gallery-img"> <img src="{{ url_for('static', filename='images/626x417.jpg') }}" class="img-fluid mx-auto d-block" alt=""> </div>
-                                    <div class="gallery-detail">
-                                        <h4 class="mb-0">Wedding Ceremony</h4> </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4 gallery-item party">
-                            <a href="{{ url_for('static', filename='images/626x417.jpg') }}" class="img-zoom">
-                                <div class="gallery-box">
-                                    <div class="gallery-img"> <img src="{{ url_for('static', filename='images/626x417.jpg') }}" class="img-fluid mx-auto d-block" alt=""> </div>
-                                    <div class="gallery-detail">
-                                        <h4 class="mb-0">Wedding Party</h4> </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            -->
             <!-- Wedding Details -->
             <div id="weddingdetails" class="whenwhere section-padding bg-pink">
                 <div class="container">
@@ -613,6 +457,17 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-md-12" id='rsvp-wednesdaywelcomedinner-section'>
+                                        <div class="form-group">
+                                            <label for="rsvp-wednesdaywelcomedinner-selection">Will you attend the <b>welcome dinner</b> after the beach day on Wednesday, November 2?</label>
+                                            <select class="custom-form-control form-control" id='rsvp-wednesdaywelcomedinner-selection'>
+                                                <option disabled selected value> ~~ Make a selection ~~ </option>
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
                                     <div class="col-md-12" id='rsvp-weddingevedinner-selection-section'>
                                         <div class="form-group">
                                             <label for="rsvp-weddingevedinner-selection">Will you attend the <b>dinner on the evening prior to the wedding</b> on Thursday, November 3?</label>
@@ -671,7 +526,7 @@
                                 </form>
                             </div>
                             <div id="post-rsvp-submit-section" class="col-md-12" style="display: none;">
-                                <h3>Thank you!</h3>
+                                <h3>Thank you! Your R.S.V.P. was successfully submited.</h3>
                             </div>
                             <div id="post-rsvp-submit-section-error" class="col-md-12" style="display: none;">
                                 <h3>Error occurred. Please refresh the page and try again.</h3>

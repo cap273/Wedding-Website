@@ -304,6 +304,7 @@ $("#rsvp-main-selection").change(function() {
 
         $('#secondary-email-section').show();
         $('#rsvp-beachday-selection-section').show();
+        $('#rsvp-wednesdaywelcomedinner-section').show();
         $('#rsvp-weddingevedinner-selection-section').show();
         $('#rsvp-postweddingbrunch-selection-section').show();
         $('#dietary-restrictions-section').show();
@@ -323,6 +324,7 @@ $("#rsvp-main-selection").change(function() {
 
         $('#secondary-email-section').hide();
         $('#rsvp-beachday-selection-section').hide();
+        $('#rsvp-wednesdaywelcomedinner-section').hide();
         $('#rsvp-weddingevedinner-selection-section').hide();
         $('#rsvp-postweddingbrunch-selection-section').hide();
         $('#dietary-restrictions-section').hide();
@@ -343,6 +345,7 @@ $("#rsvp-main-selection").change(function() {
 
         $('#secondary-email-section').hide();
         $('#rsvp-beachday-selection-section').hide();
+        $('#rsvp-wednesdaywelcomedinner-section').hide();
         $('#rsvp-weddingevedinner-selection-section').hide();
         $('#rsvp-postweddingbrunch-selection-section').hide();
         $('#dietary-restrictions-section').hide();
@@ -379,6 +382,7 @@ function submitRsvp() {
                     'primary_email': document.querySelector('#primary-email').value,
                     'secondary_email': document.querySelector('#secondary-email').value,
                     'rsvp_beachday': document.querySelector('#rsvp-beachday-selection').value,
+                    'rsvp_wednesdaywelcomedinner': document.querySelector('#rsvp-wednesdaywelcomedinner-selection').value,
                     'rsvp_weddingevedinner': document.querySelector('#rsvp-weddingevedinner-selection').value,
                     'rsvp_postweddingbrunch': document.querySelector('#rsvp-postweddingbrunch-selection').value,
                     'dietary_restrictions': document.querySelector('#dietary-restrictions').value,
