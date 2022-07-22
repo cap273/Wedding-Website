@@ -564,35 +564,118 @@
                         <div class="col-md-6 offset-md-3 bg-white p-40"> <span class="oliven-title-meta text-center">Will you attend?</span>
                             <h2 class="oliven-title text-center">R.S.V.P</h2>
                             <br>
+                            
+                            <div id="rsvp-form-section">
+                                <form autocomplete="off" class="row" action="#rsvp" onsubmit="submitRsvp();return false">
+                                    <div class="col-md-12" id='rsvp-input-name-section'>
+                                        <div class="form-group autocomplete">
+                                            <input type="text" id='rsvp-input-name' name='rsvp-input-name' class="form-control" placeholder="Name" required> 
+                                        </div>
+                                    </div>
 
-                            <form autocomplete="off" class="row" action="#rsvp" onsubmit="submitRsvp();return false">
-                                <div class="col-md-12">
-                                    <div class="form-group autocomplete">
-                                        <input type="text" id='rsvp-input-name' name='rsvp-input-name' class="form-control" placeholder="Name"> 
+                                    <div class="col-md-12" id='rsvp-main-selection-section'>
+                                        <div class="form-group">
+                                            <label for="rsvp-main-selection">Will you attend the <b>wedding</b> on Friday, November 4?</label>
+                                            <select class="custom-form-control form-control" id='rsvp-main-selection'>
+                                                <option disabled selected value> ~~ Make a selection ~~ </option>
+                                                <option value="yes">Will Attend</option>
+                                                <option value="no">Unable to Attend</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Email"> 
+
+                                    <div class="col-md-12" id='rsvp-num-guests-section'>
+                                        <div class="form-group">
+                                            <input type="number" min="1" max="6" id='rsvp-num-guests' class="number-form-control form-control" placeholder="Number of Guests Attending"> 
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" id='rsvp-num-guests' class="form-control" placeholder="Guests"> 
+                                    
+                                    <div class="col-md-12" id='primary-email-section'>
+                                        <div class="form-group">
+                                            <input type="text" id='primary-email' class="form-control" placeholder="Primary Email"> 
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+
+                                    <div class="col-md-12" id='secondary-email-section'>
+                                        <div class="form-group">
+                                            <input type="text" id='secondary-email' class="form-control" placeholder="Secondary Email (optional)"> 
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="submit" id="submit-rsvp-btn" name="submit-rsvp-btn" class="btn buttono" value="Submit">
+
+                                    <div class="col-md-12" id='rsvp-beachday-selection-section'>
+                                        <div class="form-group">
+                                            <label for="rsvp-beachday-selection">Will you attend the <b>beach day</b> on Wednesday, November 2? Transportation and lunch are provided; boats will leave from the Cartagena port around 7:45am.</label>
+                                            <select class="custom-form-control form-control" id='rsvp-beachday-selection'>
+                                                <option disabled selected value> ~~ Make a selection ~~ </option>
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                
-                            </form>
+
+                                    <div class="col-md-12" id='rsvp-weddingevedinner-selection-section'>
+                                        <div class="form-group">
+                                            <label for="rsvp-weddingevedinner-selection">Will you attend the <b>dinner on the evening prior to the wedding</b> on Thursday, November 3?</label>
+                                            <select class="custom-form-control form-control" id='rsvp-weddingevedinner-selection'>
+                                                <option disabled selected value> ~~ Make a selection ~~ </option>
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12" id='rsvp-postweddingbrunch-selection-section'>
+                                        <div class="form-group">
+                                            <label for="rsvp-postweddingbrunch-selection">Will you attend the <b>midday brunch on the day after the wedding</b> at the Santa Clara hotel  on Saturday, November 5?</label>
+                                            <select class="custom-form-control form-control" id='rsvp-postweddingbrunch-selection'>
+                                                <option disabled selected value> ~~ Make a selection ~~ </option>
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12" id='dietary-restrictions-section'>
+                                        <div class="form-group">
+                                            <label for="dietary-restictions">Please list any <b>dietary restrictions</b> for you or your guest?</label>
+                                            <textarea name="dietary-restrictions" id="dietary-restrictions" cols="30" rows="1" class="custom-form-control form-control"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12" id='flights-section'>
+                                        <div class="form-group">
+                                            <label for="flights">If known, please share your <b>flight itinerary</b> to/from Cartagena (arrival & departure dates, flight numbers)</label>
+                                            <textarea name="flights" id="flights" cols="30" rows="1" class="custom-form-control form-control" placeholder=""></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12" id='hotels-section'>
+                                        <div class="form-group">
+                                            <label for="hotels">If known, please share your <b>hotel accomodation</b> details in Cartagena (location & check-in/check-out dates)</label>
+                                            <textarea name="hotels" id="hotels" cols="30" rows="1" class="custom-form-control form-control" placeholder=""></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-12" id='message-section'>
+                                        <div class="form-group">
+                                            <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Additional message (optional)"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="submit" id="submit-rsvp-btn" name="submit-rsvp-btn" class="btn buttono" value="Submit">
+                                        </div>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                            <div id="post-rsvp-submit-section" class="col-md-12" style="display: none;">
+                                <h3>Thank you!</h3>
+                            </div>
+                            <div id="post-rsvp-submit-section-error" class="col-md-12" style="display: none;">
+                                <h3>Error occurred. Please refresh the page and try again.</h3>
+                            </div>
                         </div>
                     </div>
                 </div>

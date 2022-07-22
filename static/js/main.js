@@ -291,13 +291,150 @@
       }, 0)
   }());
 
+// Show/Hide parts of RSVP form using JQuery
+$("#rsvp-main-selection").change(function() {
+    if ($(this).val() == "yes") {
+        $('#rsvp-num-guests-section').show();
+        $('#rsvp-num-guests').attr('required', '');
+        $('#rsvp-num-guests').attr('data-error', 'This field is required.');
+
+        $('#primary-email-section').show();
+        $('#primary-email').attr('required', '');
+        $('#primary-email').attr('data-error', 'This field is required.');
+
+        $('#secondary-email-section').show();
+        $('#rsvp-beachday-selection-section').show();
+        $('#rsvp-weddingevedinner-selection-section').show();
+        $('#rsvp-postweddingbrunch-selection-section').show();
+        $('#dietary-restrictions-section').show();
+        $('#flights-section').show();
+        $('#hotels-section').show();
+        $('#message-section').show();
+
+
+    } else if ($(this).val() == "no") {
+        $('#rsvp-num-guests-section').hide();
+        $('#rsvp-num-guests').removeAttr('required');
+        $('#rsvp-num-guests').removeAttr('data-error');
+
+        $('#primary-email-section').hide();
+        $('#primary-email').removeAttr('required');
+        $('#primary-email').removeAttr('data-error');
+
+        $('#secondary-email-section').hide();
+        $('#rsvp-beachday-selection-section').hide();
+        $('#rsvp-weddingevedinner-selection-section').hide();
+        $('#rsvp-postweddingbrunch-selection-section').hide();
+        $('#dietary-restrictions-section').hide();
+        $('#flights-section').hide();
+        $('#hotels-section').hide();
+
+        $('#message-section').show();
+
+    } else {
+
+        $('#rsvp-num-guests-section').hide();
+        $('#rsvp-num-guests').removeAttr('required');
+        $('#rsvp-num-guests').removeAttr('data-error');
+
+        $('#primary-email-section').hide();
+        $('#primary-email').removeAttr('required');
+        $('#primary-email').removeAttr('data-error');
+
+        $('#secondary-email-section').hide();
+        $('#rsvp-beachday-selection-section').hide();
+        $('#rsvp-weddingevedinner-selection-section').hide();
+        $('#rsvp-postweddingbrunch-selection-section').hide();
+        $('#dietary-restrictions-section').hide();
+        $('#flights-section').hide();
+        $('#hotels-section').hide();
+        $('#message-section').hide();
+    }
+  });
+
+$("#rsvp-main-selection").trigger("change");
+
 // Submit form info
 function submitRsvp() {
 
-	let num_guests = document.querySelector('#rsvp-num-guests').value;
+    let guest_name = document.querySelector('#rsvp-input-name').value;
+    let attending_wedding = document.querySelector('#rsvp-main-selection').value;
 
-    console.log("Number:", num_guests)
+	if (guest_name != "") {
 
+		console.log("Guest Name: ", guest_name)
+
+        if (attending_wedding == "yes") {
+            console.log(guest_name, " is attending the wedding.")
+
+            fetch('/submitRsvp', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					'guest_name': guest_name,
+                    'attending': "yes",
+                    'rsvp_num_guests': document.querySelector('#rsvp-num-guests').value,
+                    'primary_email': document.querySelector('#primary-email').value,
+                    'secondary_email': document.querySelector('#secondary-email').value,
+                    'rsvp_beachday': document.querySelector('#rsvp-beachday-selection').value,
+                    'rsvp_weddingevedinner': document.querySelector('#rsvp-weddingevedinner-selection').value,
+                    'rsvp_postweddingbrunch': document.querySelector('#rsvp-postweddingbrunch-selection').value,
+                    'dietary_restrictions': document.querySelector('#dietary-restrictions').value,
+                    'flights': document.querySelector('#flights').value,
+                    'hotels': document.querySelector('#hotels').value,
+                    'message': document.querySelector('#message').value,
+				})
+			})
+			.then((response) => response.json())
+			.then((jsonResponse) => {
+				console.log('Fetch success:', jsonResponse);
+
+                if (jsonResponse['Status'] == 'OK') {
+                    $('#rsvp-form-section').hide();
+                    $('#post-rsvp-submit-section').show();
+                }
+                else {
+                    $('#rsvp-form-section').hide();
+                    $('#post-rsvp-submit-section-error').show();
+                }
+			});
+
+        }
+
+        else if (attending_wedding == "no") {
+            console.log(guest_name, " is NOT attending the wedding.")
+
+            fetch('/submitRsvp', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					'guest_name': guest_name,
+                    'attending': "no",
+                    'rsvp_num_guests': 0,
+                    'message': document.querySelector('#message').value,
+				})
+			})
+			.then((response) => response.json())
+			.then((jsonResponse) => {
+				console.log('Fetch success:', jsonResponse);
+
+                if (jsonResponse['Status'] == 'OK') {
+                    $('#rsvp-form-section').hide();
+                    $('#post-rsvp-submit-section').show();
+                }
+                else {
+                    $('#rsvp-form-section').hide();
+                    $('#post-rsvp-submit-section-error').show();
+                }
+			});
+        }
+
+
+	}
 }
 
 // Autocomplete
