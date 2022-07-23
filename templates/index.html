@@ -498,10 +498,36 @@
                                         </div>
                                     </div>
 
+                                    <!-- 
                                     <div class="col-md-12" id='flights-section'>
                                         <div class="form-group">
                                             <label for="flights">If known, please share your <b>flight itinerary</b> to/from Cartagena (arrival & departure dates, flight numbers)</label>
                                             <textarea name="flights" id="flights" cols="30" rows="1" class="custom-form-control form-control" placeholder=""></textarea>
+                                        </div>
+                                    </div>
+                                    -->
+
+                                    <div class="col-md-12" id='flights-section-arrival-datetime'>
+                                        <div class="form-group">
+                                            <label for="flights-arrival-datetime">If known, please share the date and time of your <b>arrival flight</b> to Cartagena:</label>
+                                            <br>
+                                            <input style=" border-right-style: none" type="date" name="flights-arrival-date" id="flights-arrival-date"/>
+                                            <input style=" border-left-style: none" type="time" name="flights-arrival-time" id="flights-arrival-time"/>
+                                            <br>
+                                            <label for="arrival-flight">If known, please share the airline and number of your arrival flight:</label>
+                                            <textarea name="arrival-flight" id="arrival-flight" cols="30" rows="1" class="custom-form-control form-control" placeholder="(e.g. American Airlines 2173)"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12" id='flights-section-departure-datetime'>
+                                        <div class="form-group">
+                                            <label for="flights-departure-datetime">If known, please share the date and time of your <b>departure flight</b> from Cartagena:</label>
+                                            <br>
+                                            <input style=" border-right-style: none" type="date" name="flights-departure-date" id="flights-departure-date"/>
+                                            <input style=" border-left-style: none" type="time" name="flights-departure-time" id="flights-departure-time"/>
+                                            <br>
+                                            <label for="departure-flight">If known, please share the airline and number of your departure flight:</label>
+                                            <textarea name="departure-flight" id="departure-flight" cols="30" rows="1" class="custom-form-control form-control" placeholder="(e.g. Avianca 36)"></textarea>
                                         </div>
                                     </div>
 
@@ -577,10 +603,13 @@
         <script type="text/javascript" src="{{ url_for('static', filename='js/isotope.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+
+        <!-- Main custom JavaScript -->
         <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
 
-        <!-- Autocomplete RSVP Names -->
+        <!-- Autocomplete RSVP Names execution -->
         <script>autocomplete(document.getElementById('rsvp-input-name'));</script>
+
     </div>
 </body>
 

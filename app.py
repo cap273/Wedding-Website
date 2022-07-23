@@ -150,7 +150,14 @@ def update_record():
             fields_dict, "dietary_restrictions", request.json, "Dietary Restrictions"
         )
         fields_dict = add_field_to_dict(fields_dict, "hotels", request.json, "Hotels")
-        fields_dict = add_field_to_dict(fields_dict, "flights", request.json, "Flights")
+
+        fields_dict = add_field_to_dict(fields_dict, "flights_arrival_date", request.json, "Flight Arrival Date")
+        fields_dict = add_field_to_dict(fields_dict, "flights_arrival_time", request.json, "Flight Arrival Time")
+        fields_dict = add_field_to_dict(fields_dict, "arrival_flight", request.json, "Flight Arrival Number")
+        fields_dict = add_field_to_dict(fields_dict, "flights_departure_date", request.json, "Flight Departure Date")
+        fields_dict = add_field_to_dict(fields_dict, "flights_departure_time", request.json, "Flight Departure Time")
+        fields_dict = add_field_to_dict(fields_dict, "departure_flight", request.json, "Flight Departure Number")
+
         fields_dict = add_field_to_dict(
             fields_dict, "message", request.json, "Message From Guests"
         )

@@ -308,7 +308,8 @@ $("#rsvp-main-selection").change(function() {
         $('#rsvp-weddingevedinner-selection-section').show();
         $('#rsvp-postweddingbrunch-selection-section').show();
         $('#dietary-restrictions-section').show();
-        $('#flights-section').show();
+        $('#flights-section-arrival-datetime').show();
+        $('#flights-section-departure-datetime').show();
         $('#hotels-section').show();
         $('#message-section').show();
 
@@ -328,7 +329,8 @@ $("#rsvp-main-selection").change(function() {
         $('#rsvp-weddingevedinner-selection-section').hide();
         $('#rsvp-postweddingbrunch-selection-section').hide();
         $('#dietary-restrictions-section').hide();
-        $('#flights-section').hide();
+        $('#flights-section-arrival-datetime').hide();
+        $('#flights-section-departure-datetime').hide();
         $('#hotels-section').hide();
 
         $('#message-section').show();
@@ -349,7 +351,8 @@ $("#rsvp-main-selection").change(function() {
         $('#rsvp-weddingevedinner-selection-section').hide();
         $('#rsvp-postweddingbrunch-selection-section').hide();
         $('#dietary-restrictions-section').hide();
-        $('#flights-section').hide();
+        $('#flights-section-arrival-datetime').hide();
+        $('#flights-section-departure-datetime').hide();
         $('#hotels-section').hide();
         $('#message-section').hide();
     }
@@ -386,7 +389,14 @@ function submitRsvp() {
                     'rsvp_weddingevedinner': document.querySelector('#rsvp-weddingevedinner-selection').value,
                     'rsvp_postweddingbrunch': document.querySelector('#rsvp-postweddingbrunch-selection').value,
                     'dietary_restrictions': document.querySelector('#dietary-restrictions').value,
-                    'flights': document.querySelector('#flights').value,
+
+                    'flights_arrival_date': document.querySelector('#flights-arrival-date').value,
+                    'flights_arrival_time': document.querySelector('#flights-arrival-time').value,
+                    'arrival_flight': document.querySelector('#arrival-flight').value,
+                    'flights_departure_date': document.querySelector('#flights-departure-date').value,
+                    'flights_departure_time': document.querySelector('#flights-departure-time').value,
+                    'departure_flight': document.querySelector('#departure-flight').value,
+
                     'hotels': document.querySelector('#hotels').value,
                     'message': document.querySelector('#message').value,
 				})
