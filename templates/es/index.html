@@ -365,7 +365,9 @@
                     <div>
                         <p>La ceremonia de la boda será celebrada en la <a href="https://goo.gl/maps/v6HjRDdfftvZDDFq9"><u>Iglesia de Santo Toribio</u></a>, ubicada a una cuadra del Hotel Sofitel Legend Santa Clara. La ceremonia comenzará a las 17:00 (5:00pm), seguido por un banquete de boda en el Hotel Santa Clara a las 19:00.</p>
 
-                        <h4>Código de vestimenta: se ruega etiqueta</h4>
+                        <h4>Código de vestimenta: formal de noche / etiqueta suplicada (en inglés: <i>black tie optional</i>) </h4>
+
+                        <p>Para caballeros, etiqueta suplicada implica que tanto portar traje elegante o etiqueta sencilla (e.g. esmoquin) está bienvenido. Vease <a href="https://www.stitchfix.com/men/blog/ask-a-stylist/what-does-black-tie-optional-mean/"><u>este enlace</u></a> para más detalles. Para damas, vease <a href="https://www.theknot.com/content/what-to-wear-formal-black-tie-optional-black-tie-invited"><u>este enlace</u></a> para más detalles.</p>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
@@ -498,16 +500,33 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12" id='flights-section'>
+                                    <div class="col-md-12" id='flights-section-arrival-datetime'>
                                         <div class="form-group">
-                                            <label for="flights">Si ya se sabe, por favor infórmanos sobre tu <b>itinerario de vuelo</b> desde/hasta Cartagena (fechas de llegada y salida, números de vuelo)</label>
-                                            <textarea name="flights" id="flights" cols="30" rows="1" class="custom-form-control form-control" placeholder=""></textarea>
+                                            <label for="flights-arrival-datetime">Si ya se sabe, por favor comparte con nostros la fecha y hora de <b>tu vuelo de llegada</b> a Cartagena:</label>
+                                            <br>
+                                            <input style=" border-right-style: none" type="date" name="flights-arrival-date" id="flights-arrival-date" value="2022-10-25"/>
+                                            <input style=" border-left-style: none" type="time" name="flights-arrival-time" id="flights-arrival-time" value="00:00"/>
+                                            <br>
+                                            <label for="arrival-flight">Si ya se sabe, por favor infórmanos de la aerolínea y número de tu vuelo de llegada:</label>
+                                            <textarea name="arrival-flight" id="arrival-flight" cols="30" rows="1" class="custom-form-control form-control" placeholder="(e.g. American Airlines 2173)"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12" id='flights-section-departure-datetime'>
+                                        <div class="form-group">
+                                            <label for="flights-departure-datetime">Si ya se sabe, por favor comparte con nostros la fecha y hora de <b>tu vuelo de salida</b> desde Cartagena:</label>
+                                            <br>
+                                            <input style=" border-right-style: none" type="date" name="flights-departure-date" id="flights-departure-date" value="2022-10-25"/>
+                                            <input style=" border-left-style: none" type="time" name="flights-departure-time" id="flights-departure-time" value="00:00"/>
+                                            <br>
+                                            <label for="departure-flight">Si ya se sabe, por favor infórmanos s aerolínea y número de tu vuelo de salida:</label>
+                                            <textarea name="departure-flight" id="departure-flight" cols="30" rows="1" class="custom-form-control form-control" placeholder="(e.g. Avianca 36)"></textarea>
                                         </div>
                                     </div>
 
                                     <div class="col-md-12" id='hotels-section'>
                                         <div class="form-group">
-                                            <label for="hotels">Si ya se sabe, por favor infórmanos de tu <b>alojamiento de hotel</b> en Cartagena (nombre del hotel, fechas de entrada y salida)</label>
+                                            <label for="hotels">Si ya se sabe, por favor infórmanos sobre tu <b>alojamiento de hotel</b> en Cartagena (nombre del hotel, fechas de entrada y salida)</label>
                                             <textarea name="hotels" id="hotels" cols="30" rows="1" class="custom-form-control form-control" placeholder=""></textarea>
                                         </div>
                                     </div>
@@ -527,7 +546,7 @@
                                 </form>
                             </div>
                             <div id="post-rsvp-submit-section" class="col-md-12" style="display: none;">
-                                <h3>¡Gracias! Tu respuesta ha sido entregada con éxito.</h3>
+                                <h3>¡Gracias! Tu respuesta ha sido inviada con éxito.</h3>
                             </div>
                             <div id="post-rsvp-submit-section-error" class="col-md-12" style="display: none;">
                                 <h3>Ha ocurrido un error. Por favor, actualice la página e inténtelo de nuevo.</h3>

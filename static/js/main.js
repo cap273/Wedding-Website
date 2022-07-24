@@ -373,6 +373,27 @@ function submitRsvp() {
         if (attending_wedding == "yes") {
             console.log(guest_name, " is attending the wedding.")
 
+            // Deal with special case where the user submits the default date and time for departure and/or arrival time
+            let arrival_date = "";
+            let arrival_time = "";
+            
+            let departure_date = "";
+            let departure_time = "";
+
+            if ( !(document.querySelector('#flights-arrival-date').value == "2022-10-25" 
+                && document.querySelector('#flights-arrival-time').value == "00:00") ) {
+
+                arrival_date = document.querySelector('#flights-arrival-date').value
+                arrival_time = document.querySelector('#flights-arrival-time').value
+            }
+
+            if ( !(document.querySelector('#flights-departure-date').value == "2022-10-25" 
+                && document.querySelector('#flights-departure-time').value == "00:00") ) {
+
+                departure_date = document.querySelector('#flights-departure-date').value
+                departure_time = document.querySelector('#flights-departure-time').value
+            }
+
             fetch('/submitRsvp', {
 				method: 'POST',
 				headers: {
@@ -390,11 +411,14 @@ function submitRsvp() {
                     'rsvp_postweddingbrunch': document.querySelector('#rsvp-postweddingbrunch-selection').value,
                     'dietary_restrictions': document.querySelector('#dietary-restrictions').value,
 
-                    'flights_arrival_date': document.querySelector('#flights-arrival-date').value,
-                    'flights_arrival_time': document.querySelector('#flights-arrival-time').value,
+                    'flights_arrival_date': arrival_date,
+                    'flights_arrival_time': arrival_time,
+
                     'arrival_flight': document.querySelector('#arrival-flight').value,
-                    'flights_departure_date': document.querySelector('#flights-departure-date').value,
-                    'flights_departure_time': document.querySelector('#flights-departure-time').value,
+
+                    'flights_departure_date': departure_date,
+                    'flights_departure_time': departure_time,
+
                     'departure_flight': document.querySelector('#departure-flight').value,
 
                     'hotels': document.querySelector('#hotels').value,

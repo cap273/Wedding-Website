@@ -32,11 +32,6 @@ def default_es(path=None):
 # -------------------------------- API Routes ----------------------------------
 
 
-@app.route("/test", methods=["GET"])
-def get_api():
-    return jsonify({"testName": "testValue"})
-
-
 @app.route("/getNameRecords", methods=["GET"])
 def get_records():
 
@@ -267,7 +262,8 @@ def add_field_to_dict(fields_dict, field_name, request_dict, airtable_column_nam
                 fields_dict[airtable_column_name] = "Attending"
             else:
                 fields_dict[airtable_column_name] = "Not Attending"
-        else:
+                
+        else:     
             fields_dict[airtable_column_name] = request.json[field_name]
 
     return fields_dict
