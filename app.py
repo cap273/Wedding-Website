@@ -43,6 +43,10 @@ def get_records():
     # Initialize list of guest names
     guest_names = []
 
+    if api_key is None:
+        print("API Key not present.")
+        return jsonify(guest_names)
+
     # Execute first GET request against Airtable records, of which a maximum of 100 records will be returned
     response = requests.get(
         airtable_api_url + "?fields%5B%5D=fld0MW4ubneFwzQvq",

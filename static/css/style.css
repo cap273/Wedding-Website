@@ -2292,3 +2292,7 @@ color: #ffffff;
     box-shadow: none;
     background-color: #fff
 }
+
+input[type=date], input[type=time] {
+    -webkit-appearance: none;
+ }
