@@ -1,10 +1,12 @@
 from flask import Flask, render_template, jsonify, request
 import os
 import requests
+from flask_compress import Compress
 
 app = Flask(__name__)
 app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 app.config["PORT"] = 5000
+Compress(app)
 
 # To be retrieved at runtime
 api_key = os.environ.get("airtable_api_key")
