@@ -1,11 +1,15 @@
 from flask import Flask, render_template, jsonify, request
 import os
 import requests
+
+from flask_minify import Minify
 from flask_compress import Compress
 
 app = Flask(__name__)
 app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 app.config["PORT"] = 5000
+
+Minify(app=app, html=True, js=True, cssless=True)
 
 app.config['COMPRESS_ALGORITHM'] = 'gzip'
 Compress(app)
