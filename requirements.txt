@@ -3,4 +3,3 @@
 flask
 requests
 flask-compress
-flask-minify
