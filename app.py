@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, send_from_directory, request
 import os
 import requests
 
@@ -22,16 +22,32 @@ airtable_api_url = (
 
 # Index/home routes
 @app.route("/")
-@app.route("/<path:path>")
-def default(path=None):
+@app.route("/index.html")
+def default():
     return render_template("index.html")
 
 
-# Index/home routes
+# Index/home routes for Spanish
 @app.route("/es")
-@app.route("/es/<path:path>")
-def default_es(path=None):
+@app.route("/es/index.html")
+def default_es():
     return render_template("es/index.html")
+
+
+# Serve CSS files
+# https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask
+@app.route('/static/css/<path:fileName>')
+def css_files(fileName):
+    print("Sending CSS files")
+    return send_from_directory('/static/css/', fileName, mimetype='text/css')
+
+
+# Serve JavaScript files
+@app.route('/static/js/<path:fileName>')
+def js_files(fileName):
+    print("Sending JS files")
+    return send_from_directory('/static/js/', fileName, mimetype='text/javascript')
+
 
 
 # -------------------------------- API Routes ----------------------------------
