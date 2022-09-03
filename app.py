@@ -6,8 +6,9 @@ from flask_compress import Compress
 app = Flask(__name__)
 app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 app.config["PORT"] = 5000
-compress = Compress()
-compress.init_app(app)
+
+app.config['COMPRESS_ALGORITHM'] = 'gzip'
+Compress(app)
 
 # To be retrieved at runtime
 api_key = os.environ.get("airtable_api_key")
