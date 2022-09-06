@@ -135,3 +135,10 @@ obj
 appsettings.json
 local.settings.json
 .python_packages
+
+# WebP Images - they get served elsewhere
+.webp
+
+# jpeg images - they are just for testing
+.jpeg
+.jpg

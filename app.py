@@ -1,15 +1,20 @@
-from flask import Flask, render_template, jsonify, send_from_directory, request
+from flask import Flask, render_template, jsonify, request
 import os
 import requests
 
-from flask_compress import Compress
+from whitenoise import WhiteNoise
 
-app = Flask(__name__)
-app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
+app = Flask(
+    __name__,
+    static_url_path="",
+    static_folder="staticfiles",
+    template_folder="templates",
+)
+
 app.config["PORT"] = 5000
-
-app.config['COMPRESS_ALGORITHM'] = 'gzip'
-Compress(app)
+app.wsgi_app = WhiteNoise(
+    app.wsgi_app, os.path.join(os.path.dirname(__file__), "staticfiles")
+)
 
 # To be retrieved at runtime
 api_key = os.environ.get("airtable_api_key")
@@ -25,29 +30,6 @@ airtable_api_url = (
 @app.route("/index.html")
 def default():
     return render_template("index.html")
-
-
-# Index/home routes for Spanish
-@app.route("/es")
-@app.route("/es/index.html")
-def default_es():
-    return render_template("es/index.html")
-
-
-# # Serve CSS files
-# # https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask
-# @app.route('/static/css/<path:fileName>')
-# def css_files(fileName):
-#     print("Sending CSS files")
-#     return send_from_directory('/static/css/', fileName, mimetype='text/css')
-
-
-# # Serve JavaScript files
-# @app.route('/static/js/<path:fileName>')
-# def js_files(fileName):
-#     print("Sending JS files")
-#     return send_from_directory('/static/js/', fileName, mimetype='text/javascript')
-
 
 
 # -------------------------------- API Routes ----------------------------------
@@ -146,7 +128,10 @@ def update_record():
             fields_dict, "rsvp_beachday", request.json, "Attending Wednesday Beach Day"
         )
         fields_dict = add_field_to_dict(
-            fields_dict, "rsvp_wednesdaywelcomedinner", request.json, "Attending Wednesday Welcome Dinner"
+            fields_dict,
+            "rsvp_wednesdaywelcomedinner",
+            request.json,
+            "Attending Wednesday Welcome Dinner",
         )
         fields_dict = add_field_to_dict(
             fields_dict,
@@ -171,12 +156,24 @@ def update_record():
         )
         fields_dict = add_field_to_dict(fields_dict, "hotels", request.json, "Hotels")
 
-        fields_dict = add_field_to_dict(fields_dict, "flights_arrival_date", request.json, "Flight Arrival Date")
-        fields_dict = add_field_to_dict(fields_dict, "flights_arrival_time", request.json, "Flight Arrival Time")
-        fields_dict = add_field_to_dict(fields_dict, "arrival_flight", request.json, "Flight Arrival Number")
-        fields_dict = add_field_to_dict(fields_dict, "flights_departure_date", request.json, "Flight Departure Date")
-        fields_dict = add_field_to_dict(fields_dict, "flights_departure_time", request.json, "Flight Departure Time")
-        fields_dict = add_field_to_dict(fields_dict, "departure_flight", request.json, "Flight Departure Number")
+        fields_dict = add_field_to_dict(
+            fields_dict, "flights_arrival_date", request.json, "Flight Arrival Date"
+        )
+        fields_dict = add_field_to_dict(
+            fields_dict, "flights_arrival_time", request.json, "Flight Arrival Time"
+        )
+        fields_dict = add_field_to_dict(
+            fields_dict, "arrival_flight", request.json, "Flight Arrival Number"
+        )
+        fields_dict = add_field_to_dict(
+            fields_dict, "flights_departure_date", request.json, "Flight Departure Date"
+        )
+        fields_dict = add_field_to_dict(
+            fields_dict, "flights_departure_time", request.json, "Flight Departure Time"
+        )
+        fields_dict = add_field_to_dict(
+            fields_dict, "departure_flight", request.json, "Flight Departure Number"
+        )
 
         fields_dict = add_field_to_dict(
             fields_dict, "message", request.json, "Message From Guests"
@@ -232,6 +229,7 @@ def update_record():
 
 # -------------------------------- Auxilliary functions ------------------------
 
+
 def create_http_header():
     headers = dict()
     headers["Accept"] = "application/json"
@@ -283,8 +281,8 @@ def add_field_to_dict(fields_dict, field_name, request_dict, airtable_column_nam
                 fields_dict[airtable_column_name] = "Attending"
             else:
                 fields_dict[airtable_column_name] = "Not Attending"
-                
-        else:     
+
+        else:
             fields_dict[airtable_column_name] = request.json[field_name]
 
     return fields_dict
