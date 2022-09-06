@@ -32,6 +32,13 @@ def default():
     return render_template("index.html")
 
 
+# Index/home routes for Spanish
+@app.route("/es")
+@app.route("/es/index.html")
+def default_es():
+    return render_template("es/index.html")
+
+
 # -------------------------------- API Routes ----------------------------------
 
 
